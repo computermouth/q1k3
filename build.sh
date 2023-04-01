@@ -1,4 +1,4 @@
-set -e
+set -ex
 
 # Compile the pack_map
 gcc -std=c99 pack_map.c -lm -o pack_map
