@@ -117,10 +117,18 @@ map_init = (m) => {
 	// Parse entity data and spawn all entities for this map
 	for (let i = 0; i < map.e.length;) {
 		let type = spawn_class[m.e[i++]];
+		let x = m.e[i++];
+		let y = m.e[i++];
+		let z = m.e[i++];
+		let p1 = m.e[i++];
+		let p2 = m.e[i++];
+		if (type == null){
+			continue;
+		}
 		game_spawn(
 			type, 
-			vec3(m.e[i++] * 32, m.e[i++] * 16, m.e[i++] * 32), 
-			m.e[i++], m.e[i++]
+			vec3(x * 32, y * 16, z * 32), 
+			p1, p2
 		);
 	}
 },
